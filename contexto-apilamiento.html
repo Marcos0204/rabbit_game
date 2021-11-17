@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        
+        :root {
+            /* --dark-brown: #a54a38; */
+            --light-brown: #bf624c;
+            --dark-green: #51af5e;
+            --light-green: #51af5e;
+            --shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+        }
         body{
             margin: 0;
             height: 100vh;
@@ -23,15 +31,24 @@
             box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 22px rgba(0, 0, 0, 0.22);
             overflow: hidden;
         }
-        .phone > div {
-            background-color: #d52424;
+        .phone > div.layer-3, div.layer-5, div.layer-7,div.layer-8, div.layer-9, div.layer-10 {
+            background: var(--light-brown);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            
+        }
+        .lawn {
+            background: var(--dark-green);
+            height: 20px;
+            width: 100%;
         }
         .layer-1 {
             position: absolute;
             z-index: 1;
             height: 450px;
             width: 80px;
-            background-color: yellow;
+            background-color: transparent !important;
             right: 60px;
             bottom: 0;
         }
@@ -40,14 +57,13 @@
             z-index: 2;
             height: 450px;
             width: 80px;
-            background-color: red;
+            background-color: transparent !important;
             left: 60px;
             bottom: 0;
         }
         .layer-3 {
             position: absolute;
             z-index: 3;
-            background-color: green;
             height: 400px;
             width: 220px;
             left: 0;
@@ -59,7 +75,7 @@
         .layer-4 {
             z-index: 4;
             position: absolute;
-            background-color: white;
+            background-color: transparent !important;
             height: 350px;
             width: 80px;
             left: 50px;
@@ -80,7 +96,7 @@
             z-index: 6;
             height: 240px;
             width: 80px;
-            background-color: white;
+            background-color: transparent !important;
             bottom: 0;
             right: 30px;
         }
@@ -173,6 +189,7 @@
             animation-name: blinck;
             animation-duration: 2s;
             animation-iteration-count: infinite;
+            
         }
 
         @keyframes blinck {
@@ -198,6 +215,15 @@
         .head__eye--right{
             left: 27px;
         }
+        
+
+        /*styles Claud*/
+        .layer-10_right-cloud {
+            position: absolute;
+            height: 100%;
+            width: 60%;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -222,7 +248,9 @@
                 <div class="head__eye head__eye--right"></div>
             </div>
         </div>
-        <div class="layer-3"></div>
+        <div class="layer-3">
+            <div class="lawn"></div>
+        </div>
         <div class="layer-4">
             <div class="left-ear--outer"></div>
             <div class="left-ear--inner"></div>
@@ -233,7 +261,9 @@
                 <div class="head__eye head__eye--right"></div>
             </div>
         </div>
-        <div class="layer-5"></div>
+        <div class="layer-5">
+            <div class="lawn"></div>
+        </div>
         <div class="layer-6">
             <div class="left-ear--outer"></div>
             <div class="left-ear--inner"></div>
@@ -244,10 +274,19 @@
                 <div class="head__eye head__eye--right"></div>
             </div>
         </div>
-        <div class="layer-7"></div>
-        <div class="layer-8"></div>
-        <div class="layer-9"></div>
-        <div class="layer-10"></div>
+        <div class="layer-7">
+            <div class="lawn"></div>
+        </div>
+        <div class="layer-8">
+            <div class="lawn"></div>
+        </div>
+        <div class="layer-9">
+            <div class="lawn"></div>
+        </div>
+        <div class="layer-10">
+            <div class="layer-10_right-cloud"></div>
+            <div class="layer-10_left-cloud"></div>
+        </div>
     </div>
 </body>
 </html>
