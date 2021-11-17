@@ -1,5 +1,333 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+@keyframes layer {
+    0%{
+        bottom: 0;
+    }
+    25%{
+        bottom: -80px;
+    }
+    100%{
+        bottom: 4px;
+    }
+    
 }
+@keyframes blinck {
+    0%{
+        height: 4px;
+
+    }
+    5%{
+        transform: translate(0px, 2px);
+        height: 1px;
+
+    }
+    10%{
+        transform: translate(0px, 0px);
+        height: 4px;
+    }
+
+}
+/*//////*/
+:root {
+    /* --dark-brown: #a54a38; */
+    --light-brown: #bf624c;
+    --dark-green: #51af5e;
+    --light-green: #51af5e;
+    --shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    counter-reset: score;
+}
+
+input[type=checkbox]{
+    appearance: none;
+    cursor: pointer;
+    height: 50px;
+    position: relative;
+    top: 0;
+    width: 80px;
+    z-index: 2;
+}
+input[type=checkbox]:focus{
+    appearance: none;
+    outline: none;
+}
+input:checked {
+    counter-increment: score;
+}
+.score::after {
+    content: counter(score);
+}
+
+
+.phone {
+    position: relative;
+    border: 8px solid black;
+    border-radius: 40px;
+    width: 300px;
+    height: 600px;
+    background-color: #CCEFFF;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 22px rgba(0, 0, 0, 0.22);
+    overflow: hidden;
+}
+.phone > div.layer-3, div.layer-5, div.layer-7 {
+    background: var(--light-brown);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    
+}
+.lawn {
+    background: var(--dark-green);
+    height: 20px;
+    width: 100%;
+}
+.layer-1 {
+    position: absolute;
+    z-index: 1;
+    height: 450px;
+    width: 80px;
+    background-color: transparent !important;
+    right: 60px;
+    bottom: 0;
+    animation: layer 1s ease-in-out infinite;
+}
+
+.layer-1 input[type=checkbox] {
+    color: red;
+}
+.layer-2 {
+    position: absolute;
+    z-index: 2;
+    height: 450px;
+    width: 80px;
+    background-color: transparent !important;
+    left: 60px;
+    bottom: 0;
+    animation: layer 900ms ease infinite;
+}
+.layer-3 {
+    position: absolute;
+    z-index: 3;
+    height: 400px;
+    width: 220px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+
+}
+.layer-4 {
+    z-index: 4;
+    position: absolute;
+    background-color: transparent !important;
+    height: 350px;
+    width: 80px;
+    left: 50px;
+    bottom: 0;
+    animation: layer 1.5s ease-out infinite;
+}
+.layer-5 {
+    position: absolute;
+    z-index: 5;
+    background-color: wheat;
+    height: 300px;
+    width: 220px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.layer-6 {
+    position: absolute;
+    z-index: 6;
+    height: 240px;
+    width: 80px;
+    background-color: transparent !important;
+    bottom: 0;
+    right: 30px;
+    animation: layer 1.2s ease-in infinite;
+}
+.layer-7 {
+    position: absolute;
+    z-index: 7;
+    height: 190px;
+    width: 150px;
+    background-color: seagreen;
+    bottom: 0;
+    right: 0px;
+}
+.layer-8 {
+    position: absolute;
+    z-index: 8;
+    height: 140px;
+    width: 200px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+}
+.layer-9 {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    width: 120px;
+    z-index: 9;
+}
+.layer-10 {
+    bottom: 0;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    width: 120px;
+    z-index: 10;
+}
+.left-ear--outer {
+    background-color: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    left: 10px;
+}
+.left-ear--inner {
+    background-color: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    left: 15px;
+    top: 8px;
+}
+.right-ear--outer {
+    background-color: white;
+    border-radius: 90%;
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    right: 10px;
+}
+.right-ear--inner {
+    background-color: pink;
+    border-radius: 90%;
+    width: 10px;
+    height: 50px;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+}
+.head {
+    background-color: white;
+    border-radius: 50%;
+    height: 80px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: 30px;
+    width: 100%;
+}
+.head__eye {
+    background-color: gray;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    position: absolute;
+    top: 15px;
+    animation: blinck 2s infinite;
+}
+
+
+
+
+/*styled eyes*/
+.head__eye--left{
+    right: 27px
+}
+.head__eye--right{
+    left: 27px;
+}
+
+/*arbustoo*/
+.left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 60px;
+    background-color: var(--light-green);
+    border-radius: 30px 30px 0px 0px;
+}
+.middle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 80px;
+    background-color: var(--light-green);
+    border-radius: 40px 40px 0px 0px;
+}
+.right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 110px;
+    width: 60px;
+    background-color: var(--light-green);
+    border-radius: 25px 25px 0px 0px;
+}
+
+/*//////// end arbusto////////////*/
+
+/*styles Claud*/
+
+/*rigth*/
+.layer-10_right-cloud {
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    width: 80px;
+}
+.layer-10_left-cloud{
+    background: white;
+    border-radius: 40px 0 0 30px;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    right: 80px;
+    position: absolute;
+    width: 40px;
+}
+/*left*/
+.layer-9_left-cloud {
+    background: white;
+    border-radius: 40px 40px 0 0;
+    display: inline-block;
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    width: 80px;
+}
+.layer-9_right-cloud{
+    background: white;
+    bottom: 0;
+    display: inline-block;
+    height: 60%;
+    left: 80px;
+    position: absolute;
+    width: 40px;
+    border-radius: 0px 40px 30px 0px;
+} 
+/*///////////*/
